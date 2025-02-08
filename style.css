@@ -61,6 +61,7 @@ a {
     text-decoration: none;
     color: #F5F5F6;
     font-size: 1rem;
+    padding: 2% 0;
 }
 
 main {
@@ -68,13 +69,13 @@ main {
 }
 
 .hero {
-    padding: 10% 0;
+    padding: 3% 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     gap: 0.5em;
-    background: linear-gradient(0deg, #725325, #00000000), url(/images/desert.webp);
+    background: linear-gradient(0deg, #725325, #00000000, #00000000), url(/images/desert.webp);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -94,8 +95,14 @@ h1 {
 p {
     color: #F5F5F5;
     width: 60%;
+    margin: 2% 0;
     text-align: center;
     font-size: 1.5rem;
     font-family: sans-serif;
     line-height: 1.5em;
+}
+
+h3 {
+    font-size: 1.75rem;
+    color: #F5F5F5;
 }
