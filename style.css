@@ -75,7 +75,7 @@ main {
     align-items: center;
     justify-content: space-between;
     gap: 0.5em;
-    background: linear-gradient(0deg, #725325, #00000000, #00000000), url(/images/desert.webp);
+    background: linear-gradient(0deg, #725325, #00000000, #00000000), url(./images/desert.webp);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
