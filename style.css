@@ -45,12 +45,12 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: #F5F5F5;
 }
 
 h2 {
     letter-spacing: 0.1em;
     font-size: 1.25rem;
+    color: #F5F5F5;
 }
 
 nav {
@@ -64,28 +64,44 @@ nav {
 a {
     font-family: sans-serif;
     text-decoration: none;
-    color: #F5F5F6;
+    color: #F5F5F5;
     font-size: 1rem;
     padding: 2% 0;
+    transition: .75s;
+    border-bottom: 2px solid transparent;
+}
+
+nav a:hover {
+    border-color: #F5F5F5;
 }
 nav a:last-of-type {
-    background-color: #F5F5F6;
+    background-color: #F5F5F5;
     color: #253172;
     padding: 2% 4%;
     border-radius: 10px;
+    transition: .75s;
 }
+
+nav a:last-of-type:hover {
+    box-shadow: 0 0 10px #F5F5F5;
+    transform: scale(1.1);
+}
+
 
 main {
     width: 100%;
 }
 
-.hero {
-    padding: 3% 0;
+section {
+    padding: 5% 0;
+    color: #F5F5F5;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     gap: 0.5em;
+}
+.hero {
     background: linear-gradient(0deg, #725325, #00000000, #00000000), url(./images/desert.webp);
     background-repeat: no-repeat;
     background-position: center;
@@ -108,16 +124,34 @@ p {
     width: 60%;
     margin: 2% 0;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-family: sans-serif;
     line-height: 1.5em;
 }
 
 h3 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     color: #F5F5F5;
 }
 
+.water {
+    background-color: #F5F5F5;
+}
+
+.water h2 {
+    font-size: 1.75rem;
+}
+.water h2, .water p, .water a {
+    color: #253172;
+}
+
+.water a {
+    font-size: 1.25rem;
+    padding: 1% 0;
+    color: #1f1fcc;
+    font-weight: 600;
+    font-style: italic;
+}
 
 .vanish {
     animation: vanish 2s linear forwards;
