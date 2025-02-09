@@ -42,6 +42,9 @@ body {
 header {
     width: 100%;
     padding: 2%  5%;
+    position: sticky;
+    top: 0;
+    background-color: #253172;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -69,6 +72,7 @@ a {
     padding: 2% 0;
     transition: .75s;
     border-bottom: 2px solid transparent;
+    border-top: 2px solid transparent;
 }
 
 nav a:hover {
