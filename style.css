@@ -19,7 +19,7 @@ body {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    background-color: #253172;
+    background-color: #F5F5F5;
 }
 
 .splash-page {
@@ -33,16 +33,21 @@ body {
     background-size: 70%;
     background-image: url(./images/Splash-logo.png);
     background-color: #253172;
-    z-index: 1;
+    z-index: 2;
 }
 
 .page {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
 header {
     width: 100%;
     padding: 2%  5%;
+    z-index: 1;
     box-shadow: 0 5px 5px #00000050;
     position: sticky;
     top: 0;
@@ -162,6 +167,7 @@ h3 {
 }
 
 .legal-svcs {
+    background-color: #253172;
     flex-direction: row;
     padding: 5%;
     align-items: flex-start;
@@ -221,12 +227,18 @@ i {
     background-color: #F5F5F5;
 }
 
+.practice-areas p {
+    margin-bottom: 0;
+}
+
 .practice-cards {
     width: 90%;
+    margin: 2% 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
 
 .practice-card {
     width: 22%;
@@ -234,7 +246,7 @@ i {
     background-color: white;
     border-radius: 20px;
     overflow: hidden;
-    filter: drop-shadow(0 4px 5px black);
+    filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.5));
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -263,6 +275,52 @@ i {
     padding: 0 4% 10%;
     font-size: 1rem;
     text-align: left;
+}
+
+footer {
+    width: 90%;
+    background-color: #F5F5F5;
+    color: #253172;
+    padding: 3% 0;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    font-family: sans-serif;
+}
+
+.footer-content {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+.footer-content img {
+    width: 100%;
+}
+
+.footer-content i {
+    font-size: 1.5rem;
+}
+
+.content-group {
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content-group h3 {
+    color: #253172;
+    font-size: .8rem;
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1em;
 }
 
 .vanish {
