@@ -283,8 +283,11 @@ footer {
     color: #253172;
     padding: 3% 0;
     border-top: 2px solid;
-    border-bottom: 2px solid;
     font-family: sans-serif;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .footer-content {
@@ -294,6 +297,7 @@ footer {
     align-items: flex-end;
     justify-content: space-between;
     gap: 1em;
+    padding-bottom: 3%;
 }
 
 .footer-content img {
@@ -316,11 +320,97 @@ footer {
     font-size: .8rem;
 }
 
+.hours {
+    width: 20%;
+}
+
+.hours h3 {
+    color: #253172;
+    font-size: .8rem;
+    font-weight: 800;
+}
+.schedule {
+    justify-content: flex-end;
+    gap: 1em;
+    width: 100%;
+}
+
+.schedule h3 {
+    font-size: 1rem;
+}
+
+.hours h3 span {
+    font-weight: 600;
+}
+
 .socials {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 1em;
+}
+
+.links {
+    align-items: flex-start;
+    margin-left: 10%;
+}
+
+.links h3 {
+    color: #253172;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.links ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.links ul a {
+    color: #253172;
+}
+
+.copyright {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 3%;
+    border-top: 2px solid;
+}
+
+.copyright h3 {
+    font-size: 1rem;
+    color: #253172;
+}
+
+.rights {
+    margin-right: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5em;
+}
+
+.rights i {
+    font-size: 1rem;
+}
+
+.policies {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+.policies h3 {
+    border-bottom: 2px solid;
+}
+
+h3 span {
+    font-weight: 800;
 }
 
 .vanish {
