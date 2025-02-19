@@ -278,6 +278,7 @@ i {
 }
 
 footer {
+    margin: 2% 0 0;
     width: 90%;
     background-color: #F5F5F5;
     color: #253172;
@@ -411,6 +412,34 @@ footer {
 
 h3 span {
     font-weight: 800;
+}
+
+.consultation {
+    background-color: #253172;
+}
+
+.buttons {
+    margin: 2% 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2em;
+    width: 20%;
+}
+
+.buttons button {
+    padding: 6%;
+    min-width: 50%;
+    font-size: 1.25rem;
+    border-radius: 20px;
+    border: 2px solid #F5F5F5;
+    background-color: #F5F5F5;
+}
+
+.buttons button:last-of-type {
+    background-color: transparent;
+    width: 20%;
+    color: #F5F5F5;
 }
 
 .vanish {
