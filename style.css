@@ -63,6 +63,16 @@ h2 {
     color: #F5F5F5;
 }
 
+header H2 {
+    transition: 1s;
+}
+
+header H2:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 5px white);
+}
+
+
 nav {
     width: 40%;
     display: flex;
