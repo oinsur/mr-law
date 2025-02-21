@@ -452,6 +452,49 @@ h3 span {
     color: #F5F5F5;
 }
 
+.attorneys-info {
+
+}
+
+.attorneys-info h2, .attorneys-info h3 {
+    color: #253172;
+}
+
+.attorney-cards {
+    width: 80%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2em;
+}
+
+.attorney-card {
+    width: 40%;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 5% 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.attorney-card:nth-of-type(1) {
+    background-image: url(./images/IMG_0783.jpg);
+    background-position: 45% 40%;
+    background-size: 270%;
+}
+
+.attorney-card:nth-of-type(2) {
+    background-image: url(./images/IMG_0775.jpg);
+    background-position: 60% 30%;
+    background-size: 220%;
+}
+
 .vanish {
     animation: vanish 1s 2s linear forwards;
 }
