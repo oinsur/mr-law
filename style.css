@@ -243,19 +243,37 @@ i {
 
 .practice-areas p {
     margin-bottom: 0;
+    width: 100%;
+    color: #253172;
+}
+
+.practice-areas-link{
+    margin-top: 3%;
+    color: #253172;
+    background-color: transparent;
+    border: none;
+    font-size: 1.25rem;
+    transition: .75s;
+}
+
+.practice-areas-link:hover {
+    transform: scale(1.15);
+    cursor: pointer;
 }
 
 .practice-cards {
-    width: 90%;
+    width: 92%;
     margin: 2% 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3em;
 }
 
 
 .practice-card {
-    width: 22%;
+    width: 30%;
     height: 500px;
     background-color: white;
     border-radius: 20px;
@@ -285,10 +303,31 @@ i {
 }
 
 .practice-card p {
+    position: relative;
     width: 100%;
     padding: 0 4% 10%;
     font-size: 1rem;
     text-align: left;
+    background: linear-gradient(180deg, #253172, white);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.practice-card button {
+    position: absolute;
+    bottom: 10%;
+    font-size: 1rem;
+    padding: 2% 4%;
+    border-radius: 10px;
+    background-color: #253172;
+    color: white;
+    border: none;
+    transition: .75s;
+}
+
+.practice-card button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #253172;
 }
 
 footer {
