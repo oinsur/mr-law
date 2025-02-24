@@ -75,7 +75,7 @@ header H2:hover {
 
 
 nav {
-    width: 40%;
+    width: 30%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -401,7 +401,7 @@ i {
 .practice-card-title {
     width: 100%;
     text-align: center;
-    box-shadow: 0 5px 5px #00000050;;
+    box-shadow: 0 5px 5px #00000050;
     margin-bottom: 0;
     padding-bottom: 4%;
 }
@@ -683,6 +683,91 @@ h3 span {
     /* background-image: url(./images/IMG_0775.jpg);
     background-position: 60% 30%;
     background-size: 220%; */
+}
+
+.contact {
+    width: 90%;
+}
+
+.contact h2 {
+    color: #253172;
+}
+
+.contact-content {
+    width: 100%;
+    margin: 2% 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.contact-img {
+    background-image: url(./images/contact.jpeg);
+    width: 40%;
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+}
+
+form {
+    width: 50%;
+    padding: 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2em;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #00000050;
+    color: #253172;
+}
+
+form h3 {
+    color: #253172;
+}
+
+label {
+    font-size: 1.25rem;
+}
+
+label span {
+    color: red;
+    margin-left: 2%;
+}
+
+.input-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.5em;
+}
+
+input {
+    width: 100%;
+    font-size: 1.25rem;
+    padding: 2%;
+    border-radius: 10px;
+}
+
+textarea {
+    width: 100%;
+    font-size: 1.25rem;
+    border-radius: 20px;
+    padding: 2%;
+}
+
+form button {
+    width: 100%;
+    padding: 2% 4%;
+    border-radius: 10px;
+    border: none;
+    background-color: #253172;
+    color: aliceblue;
+    font-size: 1.25rem;
 }
 
 .vanish {
