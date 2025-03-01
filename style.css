@@ -288,7 +288,7 @@ i {
 
 .practice-card img {
     width: 100%;
-    height: 30vh;
+    height: 20vh;
     object-fit: cover;
     object-position: center;
 }
@@ -333,6 +333,7 @@ i {
 }
 
 .details {
+    visibility: hidden;
     width: 100%;
     height: 100%;
     position: absolute;
