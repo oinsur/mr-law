@@ -1,10 +1,22 @@
-let splash = document.querySelector(".splash-page");
+// Loading splash page
+document.addEventListener("DOMContentLoaded", function () {
+    let splash = document.querySelector(".splash-page");
 
-window.addEventListener("load", fade);
+    // Check if the user has visited before in this session
+    if (!sessionStorage.getItem("visited")) {
+        // Show splash screen
+        splash.style.display = "flex";
 
-function fade () {
-    splash.classList.add("vanish");
-}
+        // Hide splash screen after 2 seconds
+        setTimeout(() => {
+            splash.classList.add("vanish");
+            sessionStorage.setItem("visited", "true"); // Mark the session as visited
+        }, 2000);
+    } else {
+        // Hide splash immediately if user has already visited
+        splash.style.display = "none";
+    }
+});
 const practices = {
     "criminal-defense": {
         title: "Criminal Defense",
