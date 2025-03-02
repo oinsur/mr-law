@@ -100,12 +100,24 @@ const practices = {
     "guardianship": {
         title: "Guardianship",
         image: "./images/guardianship.avif",
-        description: "<p>Ensuring the legal protection of individuals in need of support...</p>"
+        description: `<p>Our Guardianship Law practice provides comprehensive legal services for individuals seeking to establish guardianship for minors or adults who are unable to care for themselves. We understand that navigating guardianship matters can be emotionally complex and legally challenging, and we are here to guide you every step of the way.</p>
+
+        <p>We assist clients in understanding the legal requirements for guardianship, including the filing of necessary petitions, gathering evidence, and attending court hearings. Our goal is to ensure that the best interests of the individual in need of guardianship are prioritized, whether it’s a child needing a safe and stable environment or adult requiring assistance due to incapacity.</p>
+
+        <p>In addition to establishing guardianship, we also provide representation in matters related to guardianship modification, termination, and disputes between family members. We emphasize clear communication and compassionate support throughout the process, recognizing the sensitive nature of these cases.
+
+        <p>With a commitment to protecting the rights and well-being of those we represent, our Guardianship Law practice strives to provide effective solutions that foster safety, stability, and peace of mind.</p>`
     },
     "divorce-custody": {
         title: "Divorce & Custody",
         image: "./images/divorce-custody.avif",
-        description: "<p>Guiding clients through the legal aspects of divorce and custody...</p>"
+        description: `<p>Our Divorce Law practice is dedicated to guiding individuals and families through the complexities of divorce with compassion and expertise. We understand that this is a challenging time, and our goal is to provide the support and legal representation necessary to achieve a fair and equitable resolution.</p>
+
+        <p>We handle all aspects of divorce proceedings, including property division, alimony, child custody, and child support. Our approach focuses on understanding your unique circumstances and goals, allowing us to develop tailored strategies that prioritize your interests and those of your children.</p>
+
+        <p>We emphasize negotiation and mediation whenever possible, aiming to reach amicable solutions that minimize conflict and emotional strain. However, we are also prepared to advocate vigorously in court when necessary to protect your rights.</p>
+
+        <p>With a commitment to clear communication and personalized service, we are here to help you navigate the legal process with confidence and achieve the best possible outcome for your future. Whether you are seeking a collaborative divorce or need a strong advocate in litigation, our Divorce Law practice is dedicated to supporting you every step of the way.</p>`
     }
 };
 
@@ -122,6 +134,7 @@ let currentPracticeIndex = 0;
 const practiceKeys = Object.keys(practices);
 
 function updateModal(practiceKey) {
+    window.scrollTo({ top: 0, behavior: "smooth" });
     const practice = practices[practiceKey];
     modalImage.src = practice.image;
     modalTitle.textContent = practice.title;
