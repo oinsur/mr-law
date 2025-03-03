@@ -225,6 +225,7 @@ h3 {
 
 .legal-svcs p {
     width: 100%;
+    color: #F5F5F5;
 }
 
 .page-links {
@@ -240,6 +241,10 @@ h3 {
     align-items: center;
     justify-content: space-between;
     gap: 1em;
+}
+
+.page-link a {
+    width: 100%;
 }
 
 .page-link h3 {
