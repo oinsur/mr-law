@@ -146,7 +146,7 @@ let currentPracticeIndex = 0;
 const practiceKeys = Object.keys(practices);
 
 function updateModal(practiceKey) {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "auto" });
     const practice = practices[practiceKey];
     modalImage.src = practice.image;
     modalTitle.textContent = practice.title;
@@ -155,12 +155,6 @@ function updateModal(practiceKey) {
     currentPracticeIndex = practiceKeys.indexOf(practiceKey);
 }
 
-// document.querySelectorAll(".view-details").forEach((button) => {
-//     button.addEventListener("click", () => {
-//         updateModal(practiceKeys);
-//         modal.style.visibility = "visible";
-//     });
-// });
 document.querySelectorAll(".view-details").forEach((button) => {
     button.addEventListener("click", () => {
         const practiceKey = button.getAttribute("data-practice"); // Get the correct key

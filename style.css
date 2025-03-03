@@ -73,9 +73,8 @@ header H2:hover {
     filter: drop-shadow(0 0 5px white);
 }
 
-
 nav {
-    width: 30%;
+    width: 40%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -83,10 +82,13 @@ nav {
 }
 
 a {
+    width: 40%;
+    text-align: center;
     font-family: sans-serif;
     text-decoration: none;
     color: #F5F5F5;
-    font-size: 1rem;
+    /* font-size: 1rem; */
+    font-size: clamp(0.5rem,1vw,1rem);
     padding: 2% 0;
     transition: .75s;
     border-bottom: 2px solid transparent;
@@ -179,6 +181,11 @@ h3 {
     color: #1f1fcc;
     font-weight: 600;
     font-style: italic;
+    transition: .75s;
+}
+
+.water a:hover {
+    filter: drop-shadow(0 5px 5px #1f1fcc);
 }
 
 .legal-svcs {
@@ -235,6 +242,15 @@ h3 {
     gap: 1em;
 }
 
+.page-link h3 {
+    transition: .75s;
+}
+
+.page-link h3:hover {
+    filter: drop-shadow(0 0 5px #F5F5F5);
+}
+
+
 i {
     font-size: 2rem;
 }
@@ -271,7 +287,6 @@ i {
     flex-wrap: wrap;
     gap: 3em;
 }
-
 
 .practice-card {
     width: 30%;
@@ -312,6 +327,7 @@ i {
     text-align: left;
     background: linear-gradient(180deg, #253172, white);
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
 }
 
@@ -328,6 +344,7 @@ i {
 }
 
 .practice-card button:hover {
+    cursor: pointer;
     transform: scale(1.1);
     box-shadow: 0 0 10px #253172;
 }
@@ -432,7 +449,10 @@ i {
 }
 
 ul {
-
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
 }
 
 li {
@@ -524,16 +544,22 @@ footer {
     font-weight: 800;
 }
 
-.links ul {
+/* .links ul {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-}
+} */
 
 .links ul a {
     color: #253172;
+    transition: .75s;
 }
+
+.links ul a:hover {
+    filter: drop-shadow(0 5px 5px #1f1fcc);
+}
+
 
 .copyright {
     width: 100%;
@@ -606,7 +632,7 @@ h3 span {
 }
 
 .attorneys-info {
-
+    padding-bottom: 0;
 }
 
 .attorneys-info h2, .attorneys-info h3 {
@@ -674,24 +700,22 @@ h3 span {
     font-style: italic;
 }
 .attorney-card:nth-of-type(1) {
-    /* background-image: url(./images/IMG_0783.jpg);
-    background-position: 45% 40%;
-    background-size: 270%; */
     flex-direction: row-reverse;
-}
-
-.attorney-card:nth-of-type(2) {
-    /* background-image: url(./images/IMG_0775.jpg);
-    background-position: 60% 30%;
-    background-size: 220%; */
 }
 
 .contact {
     width: 90%;
+    padding: 5% 0 1%;
 }
 
 .contact h2 {
     color: #253172;
+}
+
+.contact p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-style: italic;
 }
 
 .contact-content {
@@ -702,7 +726,7 @@ h3 span {
     justify-content: space-between;
 }
 
-.contact-img {
+/* .contact-img {
     background-image: url(./images/contact.jpeg);
     width: 40%;
     height: 80vh;
@@ -710,7 +734,34 @@ h3 span {
     background-position: center;
     background-size: cover;
     border-radius: 20px;
+} */
+
+.contact-directions {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1em;
 }
+
+.contact-directions h3, p {
+    color: #253172;
+}
+
+.contact-directions p {
+    width: 100%;
+    text-align: left;
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.contact-directions img {
+    width: 100%;
+    border-radius: 20px;
+}
+
 
 form {
     width: 50%;
@@ -779,5 +830,30 @@ form button {
     100% {
         opacity: 0;
         visibility: hidden;
+    }
+}
+
+/* media queries */
+@media screen and (max-width: 785px) {
+    header {
+        flex-direction: column;
+        gap: 1em;
+        padding: 5%;
+    }    
+    nav {
+        width: 60%;
+    }
+    a{
+        font-size: clamp(0.5rem,2vw,1rem);
+    }
+}
+
+@media screen and (max-width: 425px) {
+    nav {
+        flex-direction: column;
+        gap: 1em;
+    }
+    a{
+        font-size: clamp(0.5rem,3vw,1rem);
     }
 }
