@@ -131,7 +131,8 @@ section {
 }
 
 section h2 {
-    font-size: 3rem;
+    /* font-size: 3rem; */
+    font-size: clamp(1rem, 3vw,3rem);
 }
 
 .hero {
@@ -139,6 +140,12 @@ section h2 {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+}
+
+.hero p {
+    width: 40%;
+    font-size: clamp(0.5rem, 2vw, 1.5rem);
+    padding-bottom: 15%;
 }
 
 .logo {
@@ -149,7 +156,8 @@ h1 {
     color: #253172;
     width: 50%;
     text-align: center;
-    font-size: 2.5rem;
+    /* font-size: 2.5rem; */
+    font-size: clamp(1rem, 3vw, 2.5rem);
 }
 
 p {
@@ -157,13 +165,15 @@ p {
     width: 60%;
     margin: 2% 0;
     text-align: center;
-    font-size: 1.25rem;
+    /* font-size: 1.25rem; */
+    font-size: clamp(1rem, 2vw,1.5rem);
     font-family: sans-serif;
     line-height: 1.5em;
 }
 
 h3 {
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
+    font-size: clamp(1rem, 2vw, 2.5rem);
     color: #F5F5F5;
 }
 
@@ -174,9 +184,14 @@ h3 {
 .water h2, .water p, .water a, .practice-areas h2, .practice-areas p {
     color: #253172;
 }
+/* 
+.water p {
+    font-size: clamp(1rem, 2vw,3rem);
+} */
 
 .water a {
-    font-size: 1.25rem;
+    /* font-size: 1.25rem; */
+    font-size: clamp(1rem, 2vw,2rem);
     padding: 1% 0;
     color: #1f1fcc;
     font-weight: 600;
@@ -203,10 +218,10 @@ h3 {
 .attorneys {
     background-image: url(./images/IMG_0806.jpg);
     width: 40%;
-    height: 80vh;
+    height: 70vh;
     border-radius: 20px;
     background-repeat: no-repeat;
-    background-size: 250%;
+    background-size: 210%;
     background-position: 62% 90%;
 }
 
@@ -839,6 +854,12 @@ form button {
 }
 
 /* media queries */
+@media screen and (max-width: 1024px) {
+    .attorneys {
+        height: 60vh;
+    }
+}
+
 @media screen and (max-width: 785px) {
     header {
         flex-direction: column;
@@ -851,14 +872,45 @@ form button {
     a{
         font-size: clamp(0.5rem,2vw,1rem);
     }
+    .attorneys {
+        height: 50vh;
+    }
+    .practice-card {
+        width: 50%;
+    }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 426px) {
     nav {
         flex-direction: column;
         gap: 1em;
     }
     a{
         font-size: clamp(0.5rem,3vw,1rem);
+    }
+    .legal-svcs {
+        flex-direction: column-reverse;
+        gap: 2em;
+    }
+    .legal-svcs-content {
+        width: 100%;
+        align-items: center;
+    }
+    .legal-svcs h2 {
+        width: 70%;
+        text-align: center;
+    }
+    .legal-svcs p {
+        text-align: center;
+    }
+    .page-link h3 {
+        font-size: clamp(0.8rem, 2vw, 2.5rem);
+    }
+    .attorneys {
+        width: 100%;
+        background-size: 180%;
+    }
+    .practice-card {
+        width: 80%;
     }
 }
