@@ -153,6 +153,13 @@ section h2 {
     color: aliceblue;
     border-radius: 10px;
     letter-spacing: 0.1em;
+    transition: .75s;
+}
+
+.translate:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px #F5F5F5;
+    transform: scale(1.1);
 }
 
 .hero p {
@@ -658,6 +665,13 @@ h3 span {
     border-radius: 20px;
     border: 2px solid #F5F5F5;
     background-color: #F5F5F5;
+    transition: .75s;
+}
+
+.buttons button:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px #F5F5F5;
+    transform: scale(1.1);
 }
 
 .buttons button:last-of-type {
@@ -892,6 +906,33 @@ form button {
     }
     .practice-card {
         width: 50%;
+    }
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-content {
+        width: 40%;
+        align-items: center;
+    }
+    .content-group {
+        justify-content: center;
+        gap: 0.5em;
+    }
+    .links {
+        width: 40%;
+        margin: auto;
+        align-items: center;
+    }
+    ul{
+        align-items: center;
+    }
+    .copyright {
+        flex-direction: column;
+        gap: 1em;
+    }
+    .rights {
+        margin: 0;
     }
 }
 
