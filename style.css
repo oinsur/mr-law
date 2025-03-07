@@ -13,7 +13,7 @@
 }
 
 body {
-    min-width: 375px;
+    /* min-width: 375px; */
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -311,7 +311,7 @@ i {
     color: #253172;
     background-color: transparent;
     border: none;
-    font-size: 1.25rem;
+    font-size: clamp(0.65rem, 2vw, 2rem);
     transition: .75s;
 }
 
@@ -493,7 +493,8 @@ i {
 ul {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
 }
 
@@ -516,7 +517,7 @@ footer {
 }
 
 .footer-content {
-    width: 15%;
+    width: 30%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -526,7 +527,7 @@ footer {
 }
 
 .footer-content img {
-    width: 100%;
+    width: 60%;
 }
 
 .footer-content i {
@@ -534,7 +535,7 @@ footer {
 }
 
 .content-group {
-    width: 95%;
+    width: 60%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -545,13 +546,17 @@ footer {
     font-size: .8rem;
 }
 
+.contact-info {
+    align-items: flex-start;
+}
+
 .hours {
-    width: 20%;
+    /* width: 20%; */
 }
 
 .hours h3 {
     color: #253172;
-    font-size: .8rem;
+    font-size: clamp(0.6rem, 1vw, 1rem);
     font-weight: 800;
 }
 .schedule {
@@ -573,11 +578,13 @@ footer {
     align-items: center;
     justify-content: flex-end;
     gap: 1em;
+    width: 60%;
 }
 
 .links {
-    align-items: flex-start;
-    margin-left: 10%;
+    align-items: center;
+    justify-content: center;
+    /* margin-left: 10%; */
 }
 
 .links h3 {
@@ -596,6 +603,7 @@ footer {
 .links ul a {
     color: #253172;
     transition: .75s;
+    font-size: clamp(0.75rem,1vw,1rem);
 }
 
 .links ul a:hover {
@@ -613,8 +621,9 @@ footer {
 }
 
 .copyright h3 {
-    font-size: 1rem;
+    /* font-size: 1rem; */
     color: #253172;
+    font-size: clamp(0.5rem, 2vw, 0.9rem);
 }
 
 .rights {
@@ -661,7 +670,7 @@ h3 span {
 .buttons button {
     padding: 2%;
     width: 20%;
-    font-size: 1.25rem;
+    font-size: clamp(0.7rem, 2vw, 1.25rem);
     border-radius: 20px;
     border: 2px solid #F5F5F5;
     background-color: #F5F5F5;
@@ -676,7 +685,7 @@ h3 span {
 
 .buttons button:last-of-type {
     background-color: transparent;
-    width: 20%;
+    /* width: 20%; */
     color: #F5F5F5;
 }
 
@@ -719,6 +728,7 @@ h3 span {
 
 .attorney-card:nth-of-type(2) .attorney-card-pic {
     background-image: url(./images/IMG_0769.jpg);
+    background-repeat: no-repeat;
     background-position: center;
     background-size: 170%;
 }
@@ -765,6 +775,7 @@ h3 span {
     font-size: 1.5rem;
     font-weight: 600;
     font-style: italic;
+    color: #253172;
 }
 
 .contact-content {
@@ -907,20 +918,29 @@ form button {
     .practice-card {
         width: 50%;
     }
+    .buttons {
+        flex-direction: column;
+    }
+    .buttons button {
+        width: 30%;
+    }
+
     footer {
         flex-direction: column;
         align-items: center;
     }
     .footer-content {
-        width: 40%;
+        width: 80%;
         align-items: center;
+    }
+    .footer-content i {
+        font-size: 1rem;
     }
     .content-group {
         justify-content: center;
         gap: 0.5em;
     }
     .links {
-        width: 40%;
         margin: auto;
         align-items: center;
     }
