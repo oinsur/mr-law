@@ -538,7 +538,8 @@ footer {
     width: 60%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 1em;
 }
 
 .content-group h3 {

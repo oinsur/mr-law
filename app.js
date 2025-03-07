@@ -17,6 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
         splash.style.display = "none";
     }
 });
+
+// Practice cards content
 const practices = {
     "criminal-defense": {
         title: "Criminal Defense",
