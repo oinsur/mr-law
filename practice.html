@@ -8,25 +8,27 @@
         <script src="https://kit.fontawesome.com/8db2e567ce.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/svg" href="./images/tab-icon2.svg">
     <script src="./app.js" defer></script>
+    <script src="./translate.js" defer></script>
 </head>
 <body>
     <div class="page">
         <header>
             <h2><a href="./index.html">Markowski Ruvalcava Law Firm, LLC</a></h2>
             <nav>
-                <a href="./practice.html">Practice Areas</a>
-                <a href="./attorneys.html">Attorneys</a>
-                <a href="./contact.html">Contact Us</a>
+                <a href="./practice.html" data-key="practice">Practice Areas</a>
+                <a href="./attorneys.html" data-key="attorneys">Attorneys</a>
+                <a href="./contact.html" data-key="contact">Contact Us</a>
             </nav>
         </header>
         <main>
+            <button class="translate">Traducir</button>
             <section class="practice-areas">
-                <h2>Our Practice Areas</h2>
-                <p>Learn about the practice areas in which our law firm excels, offering expert legal counsel and representation to our clients.</p>
+                <h2 data-key="practice-title">Our Practice Areas</h2>
+                <p data-key="practice-areas-learn">Learn about the practice areas in which our law firm excels, offering expert legal counsel and representation to our clients.</p>
                 <div class="practice-cards">
                     <div class="practice-card view-details" data-practice="criminal-defense">
                         <img src="./images/criminal-defense.webp" alt="Legal books">
-                        <h3>Criminal Defense</h3>
+                        <h3 data-key="practice-criminal">Criminal Defense</h3>
                         <p>In the realm of criminal law, we are dedicated to defending the rights of individuals facing criminal charges. Our approach combines aggressive defense strategies with compassionate client support. We meticulously investigate the circumstances of each case, ensuring that every legal avenue is explored. Whether negotiating plea deals or advocating in court, our focus is on achieving the best possible outcome for our clients...</p>
                         <button class="view-details">View Details</button>
                     </div>

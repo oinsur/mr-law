@@ -36,5 +36,6 @@ const translations = {
     "hours-sunday": "Domingo: ",
     "hours-appointment": "Solo con Cita",
     "hours-closed": "Cerrado"
-    // End of home page translations
+    //===========================End of home page translations===========================
+    // Practice page 
 };
