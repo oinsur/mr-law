@@ -321,7 +321,7 @@ i {
 }
 
 .practice-cards {
-    width: 92%;
+    width: 90%;
     margin: 2% 0;
     display: flex;
     align-items: center;
@@ -917,9 +917,9 @@ form button {
     .attorneys {
         height: 50vh;
     }
-    /* .practice-card {
-        width: 50%;
-    } */
+    .practice-card {
+        width: 40%;
+    }
     .buttons {
         flex-direction: column;
     }
@@ -988,7 +988,7 @@ form button {
         width: 100%;
         background-size: 180%;
     }
-    /* .practice-card {
-        width: 80%;
-    } */
+    .practice-cards {
+        flex-direction: column;
+    }
 }

@@ -163,6 +163,7 @@ document.querySelectorAll(".view-details").forEach((button) => {
         if (practiceKey in practices) {
             updateModal(practiceKey);
             modal.style.visibility = "visible";
+            modal.style.width = "100%";
         }
     });
 });
