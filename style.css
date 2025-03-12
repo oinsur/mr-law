@@ -844,6 +844,10 @@ form h3 {
 }
 
 label {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-self: flex-start;
     font-size: 1.25rem;
 }
 
@@ -927,6 +931,26 @@ form button {
     .buttons button {
         width: 30%;
     }
+    .contact-content {
+        flex-direction: column;
+        gap: 1em;
+    }
+    .contact-directions {
+        width: 100%;
+        align-items: center;
+    }
+    .contact-directions img {
+        width: 60%;
+        height: 70vh;
+        object-fit: cover;
+        object-position: top;
+    }
+    .contact h2, .contact-directions h3  {
+        font-size: 1.5rem;
+    }
+    form {
+        width: 100%;
+    }
 
     footer {
         flex-direction: column;
@@ -989,6 +1013,16 @@ form button {
         width: 100%;
         background-size: 180%;
     }
+    .attorney-card, .attorney-card:nth-of-type(1) {
+        flex-direction: column;
+    }
+    .attorney-card-pic {
+        width: 100%;
+    }
+    .attorney-card-info {
+        width: 100%;
+        align-items: flex-end;
+    }
     .practice-cards {
         flex-direction: column;
     }
@@ -1000,5 +1034,11 @@ form button {
     }
     .details i:nth-of-type(2), .details i:nth-of-type(3) {
         top: 10%;
+    }
+    .contact-directions img {
+        width: 80%;
+    }
+    form h3 {
+        font-size: 1rem;
     }
 }
