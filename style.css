@@ -684,7 +684,6 @@ h3 span {
 
 .buttons button:last-of-type {
     background-color: transparent;
-    /* width: 20%; */
     color: #F5F5F5;
 }
 
@@ -891,6 +890,34 @@ form button:hover {
     box-shadow: 0 0 10px #253172;
     transform: scale(1.1);
 }
+
+.confirmation {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #253172;
+    height: 100vh;
+    color:#F5F5F5;
+}
+
+.confirmation a {
+    width: 20%;
+    color: #253172;
+    border-radius: 20px;
+    border: 2px solid #F5F5F5;
+    background-color: #F5F5F5;
+    font-size: 1.25rem;
+    transition: .75s;
+}
+
+.confirmation a:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px #F5F5F5;
+    transform: scale(1.1);
+}
+
 
 .vanish {
     animation: vanish 1s 2s linear forwards;
