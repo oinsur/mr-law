@@ -883,6 +883,13 @@ form button {
     background-color: #253172;
     color: aliceblue;
     font-size: 1.25rem;
+    transition: .75s;
+}
+
+form button:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px #F5F5F5;
+    transform: scale(1.1);
 }
 
 .vanish {
