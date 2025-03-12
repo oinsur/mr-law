@@ -553,10 +553,6 @@ footer {
     align-items: flex-start;
 }
 
-.hours {
-    /* width: 20%; */
-}
-
 .hours h3 {
     color: #253172;
     font-size: clamp(0.6rem, 1vw, 1rem);
