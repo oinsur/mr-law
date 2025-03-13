@@ -909,6 +909,7 @@ form button:hover {
     border: 2px solid #F5F5F5;
     background-color: #F5F5F5;
     font-size: 1.25rem;
+    font-size: clamp(.5rem, 2vw,2rem);
     transition: .75s;
 }
 

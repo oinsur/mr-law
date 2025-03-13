@@ -45,7 +45,8 @@ const translations = {
     "schedule": "Agendar",
     //===========================End of home page translations===========================
     // Practice page
-    
+    "practice-areas-learn": "Conozca las áreas de práctica en las que nuestra firma de abogados se destaca, ofreciendo asesoría legal experta y representación a nuestros clientes.",
+    "practice-details": "Ver Detalles",
    
     
     // footer links
