@@ -956,6 +956,9 @@ form button:hover {
     .practice-card {
         width: 40%;
     }
+    .practice-card h3 {
+        font-size: 1rem;
+    }
     .buttons {
         flex-direction: column;
     }
