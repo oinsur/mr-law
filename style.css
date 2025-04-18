@@ -1,211 +1,216 @@
 :root {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
-    /* min-width: 375px; */
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    background-color: #F5F5F5;
+  /* min-width: 375px; */
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: #f5f5f5;
 }
 
 .splash-page {
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 70%;
-    background-image: url(./images/Splash-logo.png);
-    background-color: #253172;
-    z-index: 2;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-image: url(./images/Splash-logo.png);
+  background-color: #253172;
+  z-index: 2;
 }
 
 .page {
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 header {
-    width: 100%;
-    padding: 2%  5%;
-    z-index: 1;
-    box-shadow: 0 5px 5px #00000050;
-    position: sticky;
-    top: 0;
-    background-color: #253172;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  width: 100%;
+  padding: 2% 5%;
+  z-index: 1;
+  box-shadow: 0 5px 5px #00000050;
+  position: sticky;
+  top: 0;
+  background-color: #253172;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 h2 {
-    letter-spacing: 0.1em;
-    font-size: 1.25rem;
-    color: #F5F5F5;
+  letter-spacing: 0.1em;
+  font-size: 1.25rem;
+  color: #f5f5f5;
 }
 
 header H2 {
-    transition: 1s;
+  transition: 1s;
 }
 
 header H2:hover {
-    transform: scale(1.1);
-    filter: drop-shadow(0 0 5px white);
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 5px white);
 }
 
 nav {
-    width: 40%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2em;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2em;
 }
 
 a {
-    width: 40%;
-    text-align: center;
-    font-family: sans-serif;
-    text-decoration: none;
-    color: #F5F5F5;
-    /* font-size: 1rem; */
-    font-size: clamp(0.5rem,1vw,1rem);
-    padding: 2% 0;
-    transition: .75s;
-    border-bottom: 2px solid transparent;
-    border-top: 2px solid transparent;
+  width: 40%;
+  text-align: center;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #f5f5f5;
+  /* font-size: 1rem; */
+  font-size: clamp(0.5rem, 1vw, 1rem);
+  padding: 2% 0;
+  transition: 0.75s;
+  border-bottom: 2px solid transparent;
+  border-top: 2px solid transparent;
 }
 
 nav a:hover {
-    border-color: #F5F5F5;
+  border-color: #f5f5f5;
 }
 
 nav a:last-of-type {
-    background-color: #F5F5F5;
-    color: #253172;
-    padding: 2% 4%;
-    border-radius: 10px;
-    transition: .75s;
+  background-color: #f5f5f5;
+  color: #253172;
+  padding: 2% 4%;
+  border-radius: 10px;
+  transition: 0.75s;
 }
 
 nav a:last-of-type:hover {
-    box-shadow: 0 0 10px #F5F5F5;
-    transform: scale(1.1);
+  box-shadow: 0 0 10px #f5f5f5;
+  transform: scale(1.1);
 }
 
 main {
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 section {
-    padding: 5% 0;
-    color: #F5F5F5;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.5em;
+  padding: 5% 0;
+  color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5em;
 }
 
 section h2 {
-    /* font-size: 3rem; */
-    font-size: clamp(1rem, 2vw,3rem);
+  /* font-size: 3rem; */
+  font-size: clamp(1rem, 2vw, 3rem);
 }
 
 .hero {
-    background: linear-gradient(0deg, #725325, #00000000, #00000000), url(./images/desert.webp);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+  background: linear-gradient(0deg, #725325, #00000000, #00000000),
+    url(./images/desert.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .translate {
-    position: absolute;
-    top: 20px;
-    right: 5%;
-    background-color: #253172;
-    padding: 1% 2%;
-    border: none;
-    color: aliceblue;
-    border-radius: 10px;
-    letter-spacing: 0.1em;
-    transition: .75s;
+  position: absolute;
+  top: 20px;
+  right: 5%;
+  background-color: #253172;
+  padding: 1% 2%;
+  border: none;
+  color: aliceblue;
+  border-radius: 10px;
+  letter-spacing: 0.1em;
+  transition: 0.75s;
 }
 
 .translate:hover {
-    cursor: pointer;
-    box-shadow: 0 0 10px #F5F5F5;
-    transform: scale(1.1);
+  cursor: pointer;
+  box-shadow: 0 0 10px #f5f5f5;
+  transform: scale(1.1);
 }
 
 .hero p {
-    width: 40%;
-    font-size: clamp(0.5rem, 2vw, 1.5rem);
-    text-shadow: 0 0 10px #253172;
-    padding-bottom: 15%;
-    margin: 0;
+  width: 40%;
+  font-size: clamp(0.5rem, 2vw, 1.5rem);
+  text-shadow: 0 0 10px #253172;
+  padding-bottom: 15%;
+  margin: 0;
 }
 
 .logo {
-    width: 40%;
+  width: 40%;
 }
 
 h1 {
-    margin: 4% 0;
-    color: #253172;
-    width: 50%;
-    text-align: center;
-    /* font-size: 2.5rem; */
-    font-size: clamp(1rem, 3vw, 2.5rem);
+  margin: 4% 0;
+  color: #253172;
+  width: 50%;
+  text-align: center;
+  /* font-size: 2.5rem; */
+  font-size: clamp(1rem, 3vw, 2.5rem);
 }
 
 p {
-    color: #F5F5F5;
-    width: 60%;
-    margin: 2% 0;
-    text-align: center;
-    /* font-size: 1.25rem; */
-    font-size: clamp(1rem, 2vw,1.5rem);
-    font-family: sans-serif;
-    line-height: 1.5em;
+  color: #f5f5f5;
+  width: 60%;
+  margin: 2% 0;
+  text-align: center;
+  /* font-size: 1.25rem; */
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-family: sans-serif;
+  line-height: 1.5em;
 }
 
 h3 {
-    /* font-size: 1.5rem; */
-    font-size: clamp(0.5rem, 2vw, 2.5rem);
-    color: #F5F5F5;
+  /* font-size: 1.5rem; */
+  font-size: clamp(0.5rem, 2vw, 2.5rem);
+  color: #f5f5f5;
 }
 
 .water {
-    background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
-.water h2, .water p, .water a, .practice-areas h2, .practice-areas p {
-    color: #253172;
+.water h2,
+.water p,
+.water a,
+.practice-areas h2,
+.practice-areas p {
+  color: #253172;
 }
 /* 
 .water p {
@@ -213,383 +218,382 @@ h3 {
 } */
 
 .water a {
-     /* font-size: 1.25rem; */
-     font-size: clamp(1rem, 2vw,1.5rem);
-     padding: 1% 0;
-     color: #1f1fcc;
-     font-weight: 600;
-     font-style: italic;
-     transition: .75s;
+  /* font-size: 1.25rem; */
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  padding: 1% 0;
+  color: #1f1fcc;
+  font-weight: 600;
+  font-style: italic;
+  transition: 0.75s;
 }
 
 .water a:hover {
-    filter: drop-shadow(0 5px 5px #1f1fcc);
+  filter: drop-shadow(0 5px 5px #1f1fcc);
 }
 
 .legal-svcs {
-    background-color: #253172;
-    flex-direction: row;
-    padding: 5%;
-    align-items: flex-start;
+  background-color: #253172;
+  flex-direction: row;
+  padding: 5%;
+  align-items: flex-start;
 }
 
 .legal-svcs img {
-    width: 40%;
-    object-fit: cover;
+  width: 40%;
+  object-fit: cover;
 }
 
 .attorneys {
-    background-image: url(./images/IMG_0806.jpg);
-    width: 40%;
-    height: 70vh;
-    border-radius: 20px;
-    background-repeat: no-repeat;
-    background-size: 210%;
-    background-position: 62% 90%;
+  background-image: url(./images/IMG_0806.jpg);
+  width: 40%;
+  height: 70vh;
+  border-radius: 20px;
+  background-repeat: no-repeat;
+  background-size: 210%;
+  background-position: 62% 90%;
 }
 
 .legal-svcs-content {
-    width: 48%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 2em;
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2em;
 }
 
-.legal-svcs h2, .legal-svcs p {
-    text-align: right;
+.legal-svcs h2,
+.legal-svcs p {
+  text-align: right;
 }
 
 .legal-svcs p {
-    width: 100%;
-    color: #F5F5F5;
+  width: 100%;
+  color: #f5f5f5;
 }
 
 .page-links {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2em;
 }
 
 .page-link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
 }
 
 .page-link a {
-    width: 100%;
+  width: 100%;
 }
 
 .page-link h3 {
-    transition: .75s;
+  transition: 0.75s;
 }
 
 .page-link h3:hover {
-    filter: drop-shadow(0 0 5px #F5F5F5);
+  filter: drop-shadow(0 0 5px #f5f5f5);
 }
-
 
 i {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 .practice-areas {
-    background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
 .practice-areas p {
-    margin-bottom: 0;
-    width: 70%;
-    color: #253172;
+  margin-bottom: 0;
+  width: 70%;
+  color: #253172;
 }
 
-.practice-areas-link{
-    margin-top: 3%;
-    color: #253172;
-    background-color: transparent;
-    border: none;
-    font-size: clamp(0.65rem, 2vw, 2rem);
-    transition: .75s;
+.practice-areas-link {
+  margin-top: 3%;
+  color: #253172;
+  background-color: transparent;
+  border: none;
+  font-size: clamp(0.65rem, 2vw, 2rem);
+  transition: 0.75s;
 }
 
 .practice-areas-link:hover {
-    transform: scale(1.15);
-    cursor: pointer;
+  transform: scale(1.15);
+  cursor: pointer;
 }
 
 .practice-cards {
-    width: 90%;
-    margin: 2% 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 3em;
+  width: 90%;
+  margin: 2% 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3em;
 }
 
 .practice-card {
-    width: 30%;
-    height: 500px;
-    background-color: white;
-    border-radius: 20px;
-    overflow: hidden;
-    filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.5));
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+  width: 30%;
+  height: 500px;
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.5));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .practice-card img {
-    width: 100%;
-    height: 20vh;
-    object-fit: cover;
-    object-position: center;
+  width: 100%;
+  height: 20vh;
+  object-fit: cover;
+  object-position: center;
 }
 
 .practice-card:last-of-type img {
-    object-position: top;
+  object-position: top;
 }
 
 .practice-card h3 {
-    color: #253172;
-    font-family: sans-serif;
-    /* margin: 4% 0; */
-    padding: 4% 0;
+  color: #253172;
+  font-family: sans-serif;
+  /* margin: 4% 0; */
+  padding: 4% 0;
 }
 
 .practice-card p {
-    position: relative;
-    width: 100%;
-    padding: 0 4% 10%;
-    font-size: 1rem;
-    text-align: left;
-    background: linear-gradient(180deg, #253172, white);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+  position: relative;
+  width: 100%;
+  padding: 0 4% 10%;
+  font-size: 1rem;
+  text-align: left;
+  background: linear-gradient(180deg, #253172, white);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .practice-card button {
-    position: absolute;
-    bottom: 5%;
-    font-size: 1rem;
-    padding: 2% 4%;
-    border-radius: 10px;
-    background-color: #253172;
-    color: white;
-    border: none;
-    transition: .75s;
+  position: absolute;
+  bottom: 5%;
+  font-size: 1rem;
+  padding: 2% 4%;
+  border-radius: 10px;
+  background-color: #253172;
+  color: white;
+  border: none;
+  transition: 0.75s;
 }
 
 .practice-card button:hover {
-    cursor: pointer;
-    transform: scale(1.1);
-    box-shadow: 0 0 10px #253172;
+  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px #253172;
 }
 
 .details {
-    visibility: hidden;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    border-radius: 0;
-    top: 0;
-    z-index: 1;
-    background-color: #253172e3;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 5%;
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 0;
+  top: 0;
+  z-index: 1;
+  background-color: #253172e3;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 5%;
 }
 
 .details i:nth-of-type(1) {
-    text-align: right;
-    width: 100%;
-    margin-right: 20%;
-    font-size: 3rem;
+  text-align: right;
+  width: 100%;
+  margin-right: 20%;
+  font-size: 3rem;
 }
 
 .details i:nth-of-type(2) {
-    position: absolute;
-    top: 20%;
-    right: 15%;
-    font-size: 3rem;
+  position: absolute;
+  top: 20%;
+  right: 15%;
+  font-size: 3rem;
 }
 
 .details i:nth-of-type(3) {
-    position: absolute;
-    top: 20%;
-    left: 15%;
-    font-size: 3rem;
+  position: absolute;
+  top: 20%;
+  left: 15%;
+  font-size: 3rem;
 }
 
 .details i {
-    transition: .75s;
+  transition: 0.75s;
 }
 
 .details i:nth-of-type(1):hover {
-    text-shadow: 0 0 10px;
-    cursor: pointer;
+  text-shadow: 0 0 10px;
+  cursor: pointer;
 }
 
 .details i:nth-of-type(2):hover {
-    right: 14%;
-    cursor: pointer;
+  right: 14%;
+  cursor: pointer;
 }
 
 .details i:nth-of-type(3):hover {
-    left: 14%;
-    cursor: pointer;
+  left: 14%;
+  cursor: pointer;
 }
 
-
 .practice-card-detail {
-    width: 60%;
-    height: 100vh;
-    background-color: white;
-    border-radius: 20px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+  width: 60%;
+  height: 100vh;
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .practice-card-title {
-    width: 100%;
-    text-align: center;
-    box-shadow: 0 5px 5px #00000050;
-    margin-bottom: 0;
-    padding-bottom: 4%;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 5px 5px #00000050;
+  margin-bottom: 0;
+  padding-bottom: 4%;
 }
 
 .practice-card-detail p {
-    padding: 0 4%;
-    background: transparent;
-    color: #253172;
+  padding: 0 4%;
+  background: transparent;
+  color: #253172;
 }
 
 .practice-card-detail img {
-    width: 100%;
-    height: 50vh;
-    object-fit: cover;
-    object-position: center;
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+  object-position: center;
 }
 
 .detail-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
 }
 
 .detail-text p:last-of-type {
-    margin-bottom: 5%;
+  margin-bottom: 5%;
 }
 
 ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 li {
- list-style-type: none;
- color: #253172;   
+  list-style-type: none;
+  color: #253172;
 }
 footer {
-    margin: 2% 0 0;
-    width: 90%;
-    background-color: #F5F5F5;
-    color: #253172;
-    padding: 3% 0;
-    border-top: 2px solid;
-    font-family: sans-serif;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-wrap: wrap;
+  margin: 2% 0 0;
+  width: 90%;
+  background-color: #f5f5f5;
+  color: #253172;
+  padding: 3% 0;
+  border-top: 2px solid;
+  font-family: sans-serif;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .footer-content {
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 1em;
-    padding-bottom: 3%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1em;
+  padding-bottom: 3%;
 }
 
 .footer-content img {
-    width: 60%;
+  width: 60%;
 }
 
 .footer-content i {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .content-group {
-    width: 60%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 1em;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1em;
 }
 
 .content-group h3 {
-    color: #253172;
-    font-size: .8rem;
+  color: #253172;
+  font-size: 0.8rem;
 }
 
 .contact-info {
-    align-items: flex-start;
+  align-items: flex-start;
 }
 
 .hours h3 {
-    color: #253172;
-    font-size: clamp(0.6rem, 1vw, 1rem);
-    font-weight: 800;
+  color: #253172;
+  font-size: clamp(0.6rem, 1vw, 1rem);
+  font-weight: 800;
 }
 .schedule {
-    justify-content: flex-end;
-    gap: 1em;
-    width: 100%;
+  justify-content: flex-end;
+  gap: 1em;
+  width: 100%;
 }
 
 .schedule h3 {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 .hours h3 span {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .socials {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 1em;
-    width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1em;
+  width: 60%;
 }
 
 .links {
-    align-items: center;
-    justify-content: center;
-    /* margin-left: 10%; */
+  align-items: center;
+  justify-content: center;
+  /* margin-left: 10%; */
 }
 
 .links h3 {
-    color: #253172;
-    font-size: 1rem;
-    font-weight: 800;
+  color: #253172;
+  font-size: 1rem;
+  font-weight: 800;
 }
 
 /* .links ul {
@@ -600,188 +604,188 @@ footer {
 } */
 
 .links ul a {
-    color: #253172;
-    transition: .75s;
-    font-size: clamp(0.75rem,1vw,1rem);
+  color: #253172;
+  transition: 0.75s;
+  font-size: clamp(0.75rem, 1vw, 1rem);
 }
 
 .links ul a:hover {
-    filter: drop-shadow(0 5px 5px #1f1fcc);
+  filter: drop-shadow(0 5px 5px #1f1fcc);
 }
 
-
 .copyright {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 3%;
-    border-top: 2px solid;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 3%;
+  border-top: 2px solid;
 }
 
 .copyright h3 {
-    /* font-size: 1rem; */
-    color: #253172;
-    font-size: clamp(0.5rem, 2vw, 0.9rem);
+  /* font-size: 1rem; */
+  color: #253172;
+  font-size: clamp(0.5rem, 2vw, 0.9rem);
 }
 
 .rights {
-    margin-right: 20%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.5em;
+  margin-right: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5em;
 }
 
 .rights i {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 .policies {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
 }
 
 .policies h3 {
-    border-bottom: 2px solid;
+  border-bottom: 2px solid;
 }
 
 h3 span {
-    font-weight: 800;
+  font-weight: 800;
 }
 
 .consultation {
-    width: 100%;
-    background-color: #253172;
+  width: 100%;
+  background-color: #253172;
 }
 
 .buttons {
-    margin: 2% 0 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2em;
-    width: 90%;
+  margin: 2% 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  width: 90%;
 }
 
 .buttons button {
-    padding: 2%;
-    width: 20%;
-    font-size: clamp(0.7rem, 2vw, 1.25rem);
-    border-radius: 20px;
-    border: 2px solid #F5F5F5;
-    background-color: #F5F5F5;
-    transition: .75s;
+  padding: 2%;
+  width: 20%;
+  font-size: clamp(0.7rem, 2vw, 1.25rem);
+  border-radius: 20px;
+  border: 2px solid #f5f5f5;
+  background-color: #f5f5f5;
+  transition: 0.75s;
 }
 
 .buttons button:hover {
-    cursor: pointer;
-    box-shadow: 0 0 10px #F5F5F5;
-    transform: scale(1.1);
+  cursor: pointer;
+  box-shadow: 0 0 10px #f5f5f5;
+  transform: scale(1.1);
 }
 
 .buttons button:last-of-type {
-    background-color: transparent;
-    color: #F5F5F5;
+  background-color: transparent;
+  color: #f5f5f5;
 }
 
 .attorneys-info {
-    padding-bottom: 0;
+  padding-bottom: 0;
 }
 
-.attorneys-info h2, .attorneys-info h3 {
-    color: #253172;
+.attorneys-info h2,
+.attorneys-info h3 {
+  color: #253172;
 }
 
 .attorneys-info h3 {
-    margin-bottom: 2%;
+  margin-bottom: 2%;
 }
 
 .attorney-cards {
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 2em;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2em;
 }
 
 .attorney-card {
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding: 1% 0;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1% 0;
 }
 
 .attorney-card-pic {
-    width: 40%;
-    height: 80vh;
-    object-position: center;
-    object-fit: cover;
-    border-radius: 20px;
+  width: 40%;
+  height: 80vh;
+  object-position: center;
+  object-fit: cover;
+  border-radius: 20px;
 }
 
 .attorney-card:nth-of-type(2) .attorney-card-pic {
-    background-image: url(./images/IMG_0769.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 170%;
+  background-image: url(./images/IMG_0769.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 170%;
 }
 
 .attorney-card-info {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .attorney-card-info:nth-of-type(2) {
-    align-items: flex-end;
+  align-items: flex-end;
 }
 
 .attorney-card-info p {
-    width: 100%;
-    text-align: left;
-    color: #253172;
+  width: 100%;
+  text-align: left;
+  color: #253172;
 }
 
 .attorney-card-info:nth-of-type(2) p {
-    text-align: right;
+  text-align: right;
 }
 
 .attorney-card-info span {
-    font-style: italic;
+  font-style: italic;
 }
 .attorney-card:nth-of-type(1) {
-    flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
 .contact {
-    width: 90%;
-    padding: 5% 0 1%;
+  width: 90%;
+  padding: 5% 0 1%;
 }
 
 .contact h2 {
-    color: #253172;
+  color: #253172;
 }
 
 .contact p {
-    font-size: 1.5rem;
-    font-weight: 600;
-    font-style: italic;
-    color: #253172;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-style: italic;
+  color: #253172;
 }
 
 .contact-content {
-    width: 100%;
-    margin: 2% 0;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+  width: 100%;
+  margin: 2% 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 /* .contact-img {
@@ -795,284 +799,285 @@ h3 span {
 } */
 
 .contact-directions {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 1em;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1em;
 }
 
-.contact-directions h3{
-    color: #253172;
+.contact-directions h3 {
+  color: #253172;
 }
 
 .contact-directions p {
-    width: 100%;
-    text-align: left;
-    margin: 0;
-    font-size: 1.25rem;
-    font-weight: 400;
+  width: 100%;
+  text-align: left;
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 400;
 }
 
 .contact-directions img {
-    width: 100%;
-    border-radius: 20px;
+  width: 100%;
+  border-radius: 20px;
 }
 
-
 form {
-    width: 50%;
-    padding: 4%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 2em;
-    border-radius: 20px;
-    box-shadow: 0 0 10px #00000050;
-    color: #253172;
+  width: 50%;
+  padding: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2em;
+  border-radius: 20px;
+  box-shadow: 0 0 10px #00000050;
+  color: #253172;
 }
 
 form h3 {
-    color: #253172;
+  color: #253172;
 }
 
 label {
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-self: flex-start;
-    font-size: 1.25rem;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-self: flex-start;
+  font-size: 1.25rem;
 }
 
 label span {
-    color: red;
-    margin-left: 2%;
+  color: red;
+  margin-left: 2%;
 }
 
 .input-group {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 0.5em;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5em;
 }
 
 input {
-    width: 100%;
-    font-size: 1.25rem;
-    padding: 2%;
-    border-radius: 10px;
+  width: 100%;
+  font-size: 1.25rem;
+  padding: 2%;
+  border-radius: 10px;
 }
 
 textarea {
-    width: 100%;
-    font-size: 1.25rem;
-    border-radius: 20px;
-    padding: 2%;
+  width: 100%;
+  font-size: 1.25rem;
+  border-radius: 20px;
+  padding: 2%;
 }
 
 form button {
-    width: 100%;
-    padding: 2% 4%;
-    border-radius: 10px;
-    border: none;
-    background-color: #253172;
-    color: aliceblue;
-    font-size: 1.25rem;
-    transition: .75s;
+  width: 100%;
+  padding: 2% 4%;
+  border-radius: 10px;
+  border: none;
+  background-color: #253172;
+  color: aliceblue;
+  font-size: 1.25rem;
+  transition: 0.75s;
 }
 
 form button:hover {
-    cursor: pointer;
-    box-shadow: 0 0 10px #253172;
-    transform: scale(1.1);
+  cursor: pointer;
+  box-shadow: 0 0 10px #253172;
+  transform: scale(1.1);
 }
 
 .confirmation {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #253172;
-    height: 100vh;
-    color:#F5F5F5;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #253172;
+  height: 100vh;
+  color: #f5f5f5;
 }
 
 .confirmation a {
-    width: 20%;
-    color: #253172;
-    border-radius: 20px;
-    border: 2px solid #F5F5F5;
-    background-color: #F5F5F5;
-    font-size: 1.25rem;
-    font-size: clamp(.5rem, 2vw,2rem);
-    transition: .75s;
+  width: 20%;
+  color: #253172;
+  border-radius: 20px;
+  border: 2px solid #f5f5f5;
+  background-color: #f5f5f5;
+  font-size: 1.25rem;
+  font-size: clamp(0.5rem, 2vw, 2rem);
+  transition: 0.75s;
 }
 
 .confirmation a:hover {
-    cursor: pointer;
-    box-shadow: 0 0 10px #F5F5F5;
-    transform: scale(1.1);
+  cursor: pointer;
+  box-shadow: 0 0 10px #f5f5f5;
+  transform: scale(1.1);
 }
 
-
 .vanish {
-    animation: vanish 1s 2s linear forwards;
+  animation: vanish 1s 2s linear forwards;
 }
 /* splash page animation */
 @keyframes vanish {
-    100% {
-        opacity: 0;
-        visibility: hidden;
-    }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 /* media queries */
 @media screen and (max-width: 1024px) {
-    .attorneys {
-        height: 60vh;
-    }
+  .attorneys {
+    height: 60vh;
+  }
 }
 
 @media screen and (max-width: 785px) {
-    header {
-        flex-direction: column;
-        gap: 1em;
-        padding: 5%;
-    }    
-    nav {
-        width: 60%;
-    }
-    a{
-        font-size: clamp(0.5rem,2vw,1rem);
-    }
-    .attorneys {
-        height: 50vh;
-    }
-    .practice-card {
-        width: 40%;
-    }
-    .practice-card h3 {
-        font-size: 1rem;
-    }
-    .buttons {
-        flex-direction: column;
-    }
-    .buttons button {
-        width: 30%;
-    }
-    .contact-content {
-        flex-direction: column;
-        gap: 1em;
-    }
-    .contact-directions {
-        width: 100%;
-        align-items: center;
-    }
-    .contact-directions img {
-        width: 60%;
-        height: 70vh;
-        object-fit: cover;
-        object-position: top;
-    }
-    .contact h2, .contact-directions h3  {
-        font-size: 1.5rem;
-    }
-    form {
-        width: 100%;
-    }
+  header {
+    flex-direction: column;
+    gap: 1em;
+    padding: 5%;
+  }
+  nav {
+    width: 60%;
+  }
+  a {
+    font-size: clamp(0.5rem, 2vw, 1rem);
+  }
+  .attorneys {
+    height: 50vh;
+  }
+  .practice-card {
+    width: 40%;
+  }
+  .practice-card h3 {
+    font-size: 1rem;
+  }
+  .buttons {
+    flex-direction: column;
+  }
+  .buttons button {
+    width: 30%;
+  }
+  .contact-content {
+    flex-direction: column;
+    gap: 1em;
+  }
+  .contact-directions {
+    width: 100%;
+    align-items: center;
+  }
+  .contact-directions img {
+    width: 60%;
+    height: 70vh;
+    object-fit: cover;
+    object-position: top;
+  }
+  .contact h2,
+  .contact-directions h3 {
+    font-size: 1.5rem;
+  }
+  form {
+    width: 100%;
+  }
 
-    footer {
-        flex-direction: column;
-        align-items: center;
-    }
-    .footer-content {
-        width: 80%;
-        align-items: center;
-    }
-    .footer-content i {
-        font-size: 1rem;
-    }
-    .content-group {
-        justify-content: center;
-        gap: 0.5em;
-    }
-    .links {
-        margin: auto;
-        align-items: center;
-    }
-    ul{
-        align-items: center;
-    }
-    .copyright {
-        flex-direction: column;
-        gap: 1em;
-    }
-    .rights {
-        margin: 0;
-    }
+  footer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-content {
+    width: 80%;
+    align-items: center;
+  }
+  .footer-content i {
+    font-size: 1rem;
+  }
+  .content-group {
+    justify-content: center;
+    gap: 0.5em;
+  }
+  .links {
+    margin: auto;
+    align-items: center;
+  }
+  ul {
+    align-items: center;
+  }
+  .copyright {
+    flex-direction: column;
+    gap: 1em;
+  }
+  .rights {
+    margin: 0;
+  }
 }
 
 @media screen and (max-width: 426px) {
-    nav {
-        flex-direction: column;
-        gap: 1em;
-    }
-    a{
-        font-size: clamp(0.5rem,3vw,1rem);
-    }
-    .legal-svcs {
-        flex-direction: column-reverse;
-        gap: 2em;
-    }
-    .legal-svcs-content {
-        width: 100%;
-        align-items: center;
-    }
-    .legal-svcs h2 {
-        width: 70%;
-        text-align: center;
-    }
-    .legal-svcs p {
-        text-align: center;
-    }
-    .page-link h3 {
-        font-size: clamp(0.8rem, 2vw, 2.5rem);
-    }
-    .attorneys {
-        width: 100%;
-        background-size: 180%;
-    }
-    .attorney-card, .attorney-card:nth-of-type(1) {
-        flex-direction: column;
-    }
-    .attorney-card-pic {
-        width: 100%;
-    }
-    .attorney-card-info {
-        width: 100%;
-        align-items: flex-end;
-    }
-    .practice-cards {
-        flex-direction: column;
-    }
-    .practice-card {
-        width: 70%;
-    }
-    .practice-card-detail {
-        width: 70%;
-    }
-    .details i:nth-of-type(2), .details i:nth-of-type(3) {
-        top: 10%;
-    }
-    .contact-directions img {
-        width: 80%;
-    }
-    form h3 {
-        font-size: 1rem;
-    }
+  nav {
+    flex-direction: column;
+    gap: 1em;
+  }
+  a {
+    font-size: clamp(0.5rem, 3vw, 1rem);
+  }
+  .legal-svcs {
+    flex-direction: column-reverse;
+    gap: 2em;
+  }
+  .legal-svcs-content {
+    width: 100%;
+    align-items: center;
+  }
+  .legal-svcs h2 {
+    width: 70%;
+    text-align: center;
+  }
+  .legal-svcs p {
+    text-align: center;
+  }
+  .page-link h3 {
+    font-size: clamp(0.8rem, 2vw, 2.5rem);
+  }
+  .attorneys {
+    width: 100%;
+    background-size: 180%;
+  }
+  .attorney-card,
+  .attorney-card:nth-of-type(1) {
+    flex-direction: column;
+  }
+  .attorney-card-pic {
+    width: 100%;
+  }
+  .attorney-card-info {
+    width: 100%;
+    align-items: flex-end;
+  }
+  .practice-cards {
+    flex-direction: column;
+  }
+  .practice-card {
+    width: 70%;
+  }
+  .practice-card-detail {
+    width: 70%;
+  }
+  .details i:nth-of-type(2),
+  .details i:nth-of-type(3) {
+    top: 10%;
+  }
+  .contact-directions img {
+    width: 80%;
+  }
+  form h3 {
+    font-size: 1rem;
+  }
 }
