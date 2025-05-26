@@ -1,6 +1,85 @@
-// Logic for the tranlation into Spanish
+// Logic for the translation into Spanish
 // Rather than using an API, this is a dictionary that contains the translated text
 // Use data-key attributes for this in the HTML files
+// Get saved language from localStorage or default to English
+let currentLanguage = localStorage.getItem("language") || "en";
+
+// Apply translation to all elements with data-key and translate placeholders
+function applyTranslations(language) {
+  const elements = document.querySelectorAll("[data-key]");
+  elements.forEach((el) => {
+    const key = el.getAttribute("data-key");
+    const original = el.getAttribute("data-original") || el.innerHTML;
+    const translatedText =
+      language === "es" && translations[key] ? translations[key] : original;
+
+    fadeTextChange(el, translatedText);
+
+    // Also translate placeholders if element has placeholder attribute
+    if (el.placeholder) {
+      const placeholderKey = "placeholder-" + key;
+      if (language === "es" && translations[placeholderKey]) {
+        el.placeholder = translations[placeholderKey];
+      } else {
+        // If original placeholder stored, restore it, else keep current
+        if (el.hasAttribute("data-placeholder-original")) {
+          el.placeholder = el.getAttribute("data-placeholder-original");
+        }
+      }
+    }
+  });
+
+  updateTranslateButton(language);
+  localStorage.setItem("language", language);
+}
+
+// Save original English text and placeholders (only once)
+function storeOriginalText() {
+  document.querySelectorAll("[data-key]").forEach((el) => {
+    if (!el.hasAttribute("data-original")) {
+      el.setAttribute("data-original", el.innerHTML);
+    }
+    if (el.placeholder && !el.hasAttribute("data-placeholder-original")) {
+      el.setAttribute("data-placeholder-original", el.placeholder);
+    }
+  });
+}
+
+// Fade out, change content, and fade in
+function fadeTextChange(element, newText) {
+  element.style.transition = "opacity 0.3s";
+  element.style.opacity = 0;
+  setTimeout(() => {
+    element.innerHTML = newText;
+    element.style.opacity = 1;
+  }, 300);
+}
+
+// Update toggle button with fade effect
+function updateTranslateButton(language) {
+  const button = document.querySelector(".translate");
+  if (!button) return;
+
+  const newLabel = language === "es" ? "English" : "Español";
+  fadeTextChange(button, newLabel);
+}
+
+// Toggle between English and Spanish
+function toggleLanguage() {
+  currentLanguage = currentLanguage === "en" ? "es" : "en";
+  applyTranslations(currentLanguage);
+}
+
+// Initialize translations on page load
+document.addEventListener("DOMContentLoaded", () => {
+  storeOriginalText();
+  applyTranslations(currentLanguage);
+
+  const button = document.querySelector(".translate");
+  if (button) {
+    button.addEventListener("click", toggleLanguage);
+  }
+});
 
 // translations
 const translations = {
@@ -72,21 +151,37 @@ const translations = {
   "attorney-titles": "Socio / Abogado",
   "attorneys-markowski-bio":
     "Theodore Raymundo Markowski nació y creció en El Paso, Texas. Recibió su licenciatura en Sociología con especialización en Justicia Penal de la Northern Arizona University y su Doctorado en Jurisprudencia en Arizona Summit Law School. Durante la escuela de derecho, obtuvo experiencia en derecho civil a través de pasantías en derecho de agravios y bancarrota. Después de casi una década en Arizona, Theodore regresó a su área natal y se unió a la Oficina del Fiscal del Distrito del Condado de Doña Ana, donde procesó para el Estado de Nuevo México, perfeccionando sus habilidades de litigación y juicio a través de cientos de casos.<br><br>Durante casi cuatro años, Theodore ha estado en práctica privada, manejando una amplia gama de disputas civiles, incluyendo derecho de familia y casos de violencia doméstica. Esta experiencia lo ha hecho altamente competente en diversas áreas civiles. Su amplia experiencia, combinada con su tiempo en la fiscalía, lo convierte en un abogado seguro y capaz para abordar diversos problemas legales. Ahora está enfocado en aprovechar su experiencia diversa para lograr resultados exitosos para sus clientes en áreas comerciales emergentes, estando siempre preparado para litigar cuando sea necesario.<br><span>** Licenciado en Texas y Nuevo México</span>",
-  "attorney-ruvalcaba-bio":
+  "attorneys-ruvalcaba-bio":
     "Carlos Ruvalcaba es un abogado experimentado que realmente se preocupa por sus clientes. Como un orgulloso estadounidense y veterano de la Fuerza Aérea de EE.UU., Carlos combina un fuerte sentido del deber con una amplia experiencia legal. Obtuvo su licenciatura en Ciencias Políticas de la Universidad de Texas en El Paso y su Doctorado en Jurisprudencia en Thomas Jefferson Law School en San Diego, California. Carlos tiene una gran experiencia en derecho penal y una ventaja única como ex fiscal. Conoce cómo funciona el sistema desde dentro, lo que le ayuda a construir una defensa sólida para sus clientes.<br><br> Carlos está comprometido a proteger sus derechos y siempre pone sus mejores intereses en primer lugar. Entiende que enfrentar cargos criminales es estresante y emocional, y está aquí para ofrecer el apoyo compasivo que necesita. Además de su experiencia en derecho penal, Carlos tiene experiencia en manejar casos de CYFD/CPS y representa activamente a padres que luchan por recuperar la custodia de sus hijos del Estado. Su dedicación y profundo conocimiento de estos casos lo convierten en un defensor poderoso para las familias.<br><br>No deje que los cargos criminales o las batallas de custodia lo abrumen. Comuníquese con Carlos Ruvalcaba hoy para una consulta y permítale ayudarle a navegar el sistema legal con confianza y cuidado.<br><span>** Licenciado en Nuevo México</span>",
   // contact page
+  "contact-heading": "Contáctenos",
+  "need-assistance": "¿Necesita Asistencia Legal?",
+  "help-description":
+    "Estamos aquí para ayudarle. Puede comunicarse con nosotros durante nuestro horario de atención por teléfono o visitar nuestra oficina para una consulta. Si lo prefiere, complete el formulario de contacto a la derecha y un miembro de nuestro equipo le responderá lo antes posible.",
+  "brief-description": "Descripción breve de su problema legal",
+  "label-name": "Nombre",
+  "label-phone": "Teléfono",
+  "label-email": "Correo Electrónico",
+  "label-message": "Su mensaje",
+  "send-button": "Enviar Consulta",
+  "legal-support-ending":
+    "Esperamos poder asistirle con sus necesidades legales.",
+  // Placeholder translations
+  "placeholder-name": "Escriba su nombre",
+  "placeholder-phone": "Escriba su número de teléfono",
+  "placeholder-email": "Escriba su correo electrónico",
+  "placeholder-message": "Escriba su mensaje",
 
   // footer links
   "links-title": "Enlaces Rápidos",
   home: "Inicio",
   // hours
   "hours-title": "Horas de Trabajo",
-  "hours-monday-thursday": "Lunes-Jueves: ",
-  "hours-friday": "Viernes: ",
-  "hours-saturday": "Sábado: ",
-  "hours-sunday": "Domingo: ",
-  "hours-appointment": "Solo con Cita",
-  "hours-closed": "Cerrado",
+  "hours-mon-thurs": "Lunes-Jueves: <span>8:30AM - 5:00PM</span>",
+  "hours-fri": "Viernes: <span>9:00AM - 2:00PM</span>",
+  "hours-sat": "Sábado: <span>Solo con Cita</span>",
+  "hours-sun": "Domingo: <span>Cerrado</span>",
+
   // copyright
   "copyright-rights":
     "2025 Markowski Ruvalcava Law Firm, LLC. Todos los derechos reservados.",
