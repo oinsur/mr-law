@@ -23,7 +23,7 @@ const practices = {
   "criminal-defense": {
     title: "Criminal Defense",
     image: "./images/criminal-defense.webp",
-    description: `<p>In the realm of criminal law, we are dedicated to defending the rights of individuals facing criminal charges. Our approach combines aggressive defense strategies with compassionate client support. We meticulously investigate the circumstances of each case, ensuring that every legal avenue is
+    description: `<p data-key="practice-criminal-modal">In the realm of criminal law, we are dedicated to defending the rights of individuals facing criminal charges. Our approach combines aggressive defense strategies with compassionate client support. We meticulously investigate the circumstances of each case, ensuring that every legal avenue is
         explored. Whether negotiating plea deals or advocating in court, our focus is on achieving the best possible outcome for our clients.</p>
         
         <p>We understand the impact that criminal charges can have on lives and reputations, and we are committed to protecting your rights and pursuing justice on your behalf.</p>
@@ -147,12 +147,34 @@ const nextBtn = document.getElementById("next");
 let currentPracticeIndex = 0;
 const practiceKeys = Object.keys(practices);
 
+// function updateModal(practiceKey) {
+//   window.scrollTo({ top: 0, behavior: "auto" });
+//   const practice = practices[practiceKey];
+//   modalImage.src = practice.image;
+//   modalTitle.textContent = practice.title;
+//   modalDescription.innerHTML = practice.description;
+//   modal.style.display = "flex";
+//   currentPracticeIndex = practiceKeys.indexOf(practiceKey);
+// }
 function updateModal(practiceKey) {
   window.scrollTo({ top: 0, behavior: "auto" });
   const practice = practices[practiceKey];
+
   modalImage.src = practice.image;
+
+  // Set title and assign data-key dynamically
+  modalTitle.setAttribute("data-key", `modal-title-${practiceKey}`);
+  modalTitle.setAttribute("data-original", practice.title); // store English original
   modalTitle.textContent = practice.title;
+
+  // Set description and assign data-key dynamically
+  modalDescription.setAttribute("data-key", `modal-description-${practiceKey}`);
+  modalDescription.setAttribute("data-original", practice.description); // store English original
   modalDescription.innerHTML = practice.description;
+
+  // Apply translation after modal is updated
+  applyTranslations(currentLanguage);
+
   modal.style.display = "flex";
   currentPracticeIndex = practiceKeys.indexOf(practiceKey);
 }

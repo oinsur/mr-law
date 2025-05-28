@@ -1,6 +1,7 @@
 // Logic for the translation into Spanish
 // Rather than using an API, this is a dictionary that contains the translated text
 // Use data-key attributes for this in the HTML files
+
 // Get saved language from localStorage or default to English
 let currentLanguage = localStorage.getItem("language") || "en";
 
@@ -9,24 +10,27 @@ function applyTranslations(language) {
   const elements = document.querySelectorAll("[data-key]");
   elements.forEach((el) => {
     const key = el.getAttribute("data-key");
-    const original = el.getAttribute("data-original") || el.innerHTML;
+
+    // Handle placeholder if the element supports it
+    if (el.placeholder !== undefined) {
+      const placeholderKey = "placeholder-" + key;
+      const originalPlaceholder =
+        el.getAttribute("data-placeholder-original") || el.placeholder;
+
+      const translatedPlaceholder =
+        language === "es" && translations[placeholderKey]
+          ? translations[placeholderKey]
+          : originalPlaceholder;
+
+      el.setAttribute("placeholder", translatedPlaceholder);
+    }
+
+    // Handle inner text/HTML
+    const originalText = el.getAttribute("data-original") || el.innerHTML;
     const translatedText =
-      language === "es" && translations[key] ? translations[key] : original;
+      language === "es" && translations[key] ? translations[key] : originalText;
 
     fadeTextChange(el, translatedText);
-
-    // Also translate placeholders if element has placeholder attribute
-    if (el.placeholder) {
-      const placeholderKey = "placeholder-" + key;
-      if (language === "es" && translations[placeholderKey]) {
-        el.placeholder = translations[placeholderKey];
-      } else {
-        // If original placeholder stored, restore it, else keep current
-        if (el.hasAttribute("data-placeholder-original")) {
-          el.placeholder = el.getAttribute("data-placeholder-original");
-        }
-      }
-    }
   });
 
   updateTranslateButton(language);
@@ -39,7 +43,11 @@ function storeOriginalText() {
     if (!el.hasAttribute("data-original")) {
       el.setAttribute("data-original", el.innerHTML);
     }
-    if (el.placeholder && !el.hasAttribute("data-placeholder-original")) {
+
+    if (
+      el.placeholder !== undefined &&
+      !el.hasAttribute("data-placeholder-original")
+    ) {
       el.setAttribute("data-placeholder-original", el.placeholder);
     }
   });
@@ -47,6 +55,15 @@ function storeOriginalText() {
 
 // Fade out, change content, and fade in
 function fadeTextChange(element, newText) {
+  if (
+    element.tagName === "INPUT" ||
+    element.tagName === "TEXTAREA" ||
+    element.tagName === "SELECT"
+  ) {
+    // Skip changing innerHTML for form elements
+    return;
+  }
+
   element.style.transition = "opacity 0.3s";
   element.style.opacity = 0;
   setTimeout(() => {
@@ -111,13 +128,14 @@ const translations = {
   "water-link5":
     "Conversaciones comunitarias: Abogados discuten la lucha por el agua limpia y la 'incompetencia' de CRRUA",
   // legal section
+  "legal-title": "Servicios legales integrales para sus necesidades",
   "legal-desc":
     "Nuestro bufete de abogados tiene como objetivo proporcionar una amplia gama de servicios legales para satisfacer sus necesidades. Nuestros abogados experimentados están dedicados a ofrecer resultados excepcionales y una atención personalizada a cada cliente.",
   "practice-areas": "Áreas de Práctica",
   attorneys: "Abogados",
   // Practice section
   "practice-title": "Nuestras Áreas de Práctica",
-  "practice-crimianal": "Defensa Criminal",
+  "practice-criminal": "Defensa Criminal",
   "practice-criminal-desc":
     "En el ámbito del derecho penal, nos dedicamos a defender los derechos de las personas que enfrentan cargos criminales. Nuestro enfoque combina estrategias de defensa agresivas con un apoyo compasivo al cliente. Investigamos meticulosamente las circunstancias de cada caso, asegurando que se exploren todas las opciones legales. Ya sea negociando acuerdos de culpabilidad o defendiendo en la corte, nuestro objetivo es lograr el mejor resultado posible para nuestros clientes...",
   "learn-more": "Más información",
@@ -145,6 +163,103 @@ const translations = {
   "practice-areas-learn":
     "Conozca las áreas de práctica en las que nuestra firma de abogados se destaca, ofreciendo asesoría legal experta y representación a nuestros clientes.",
   "practice-details": "Ver Detalles",
+  "practice-criminal-modal": "En lo de....",
+  // practice modals ...
+  "modal-title-criminal-defense": "Defensa Criminal",
+  "modal-description-criminal-defense": `<p>En el ámbito del derecho penal, estamos dedicados a defender los derechos de las personas que enfrentan cargos criminales. Nuestro enfoque combina estrategias de defensa agresivas con un apoyo compasivo al cliente. Investigamos meticulosamente las circunstancias de cada caso, asegurándonos de que se explore cada vía legal. Ya sea negociando acuerdos de culpabilidad o defendiendo en la corte, nuestro enfoque está en lograr el mejor resultado posible para nuestros clientes.
+</p>
+
+<p>Entendemos el impacto que los cargos criminales pueden tener en las vidas y reputaciones, y estamos comprometidos a proteger sus derechos y buscar justicia en su nombre.</p>
+
+<h3>1) DELITOS MENORES</h3>
+
+<p>Un delito menor es una ofensa criminal que generalmente se castiga con menos de un año de cárcel, multas, servicio comunitario o libertad condicional. Estas ofensas son menos graves que los delitos mayores pero más graves que las infracciones.</p>
+
+<ul>
+  <h3>Ejemplos incluyen:</h3>
+  <li>- Agresión simple</li>
+  <li>- Agresión a un miembro del hogar</li>
+  <li>- Conducta desordenada</li>
+  <li>- Violación de una orden de restricción</li>
+</ul>
+
+<p>Los delitos menores, aunque considerados menos graves que los delitos mayores, aún pueden tener consecuencias significativas. Por eso, nuestro objetivo es minimizar el impacto en su vida asegurando que protejamos sus derechos y logremos el mejor resultado posible para su caso.</p>
+
+<h3>2) DELITOS GRAVES</h3>
+
+<p>Un delito grave es una ofensa criminal seria que se castiga con más de un año en prisión. Los delitos graves a menudo se categorizan según la gravedad del delito y normalmente tienen consecuencias duraderas para los condenados.</p>
+
+<h3>Ejemplos incluyen:</h3>
+<ul>
+  <li>- Delitos de drogas</li>
+  <li>- Crímenes violentos: asesinato, asalto con un arma mortal, robo, etc.</li>
+  <li>- Delitos sexuales</li>
+  <li>- Delitos contra la propiedad: robo, incendio premeditado, etc.</li>
+</ul>
+
+<p>Cuando se enfrentan cargos por delitos graves, las consecuencias son importantes. Las condenas pueden conllevar sanciones severas que afectan a usted y a su familia durante años, por lo que es fundamental contar con representación legal experimentada.</p>
+
+<h3>3) MANEJO BAJO LA INFLUENCIA (DUI)</h3>
+
+<p>Nuestra práctica en leyes de DUI está dedicada a defender a personas acusadas de conducir bajo la influencia. Entendemos que un cargo de DUI puede tener consecuencias graves, incluyendo multas, suspensión de licencia y posible tiempo en la cárcel.</p>
+
+<p>Nuestro equipo ofrece representación legal sólida en cada etapa del proceso. Investigamos a fondo las circunstancias de cada caso, desafiando la evidencia y cuestionando la validez de las pruebas de sobriedad, resultados del alcoholímetro y procedimientos de arresto.</p>
+
+<p>Priorizamos estrategias personalizadas adaptadas a su situación única, ya sea negociando acuerdos favorables o defendiendo sus derechos en la corte. Nuestro objetivo es mitigar el impacto de los cargos de DUI en su vida, proteger sus privilegios de conducción y trabajar hacia el mejor resultado posible.</p>
+
+<p>Con un compromiso con la excelencia y un profundo entendimiento de las leyes de DUI, estamos aquí para guiarle durante este momento desafiante.</p>
+
+<h3>4) JUSTICIA JUVENIL</h3>
+
+<p>Nuestra práctica en leyes juveniles está dedicada a representar a menores en asuntos legales que afectan sus vidas y futuros. Entendemos que los jóvenes pueden encontrarse en situaciones difíciles, y nuestro objetivo es brindar una representación compasiva y bien informada, adaptada a sus circunstancias.</p>
+
+<p>Manejamos una variedad de asuntos, incluyendo casos de delincuencia, delitos de estatus y cuestiones relacionadas con el sistema de justicia juvenil. Nuestro equipo está comprometido con la protección de los derechos de los menores durante todo el proceso legal, desde las audiencias iniciales hasta las opciones de rehabilitación.</p>
+
+<p>Adoptamos un enfoque holístico, haciendo hincapié en la educación, el apoyo y los resultados positivos. Trabajamos en estrecha colaboración con familias, escuelas y recursos comunitarios para abordar los problemas subyacentes que pueden contribuir a los desafíos legales de un menor.</p>
+
+<p>Al priorizar la rehabilitación sobre el castigo, nos esforzamos por ayudar a nuestros jóvenes clientes a navegar sus problemas legales mientras se enfocan en su crecimiento personal y sus oportunidades futuras. Con un profundo conocimiento del derecho juvenil, estamos aquí para abogar por un futuro más brillante para cada joven que representamos.</p>
+`,
+  "modal-title-civil-rights": "Derechos Civiles",
+  "modal-description-civil-rights": `<p>Nuestra práctica en Derecho de Derechos Civiles está comprometida con la protección y defensa de los derechos y libertades fundamentales garantizados a las personas por la ley. Nos enfocamos en casos que involucran discriminación, mala conducta policial, arrestos injustificados y violaciones de derechos constitucionales.</p>
+
+<p>Creemos que todas las personas merecen un trato igualitario y protección bajo la ley, y trabajamos incansablemente para responsabilizar a las personas e instituciones cuando se violan esos derechos. Nuestro enfoque incluye investigaciones exhaustivas, litigios estratégicos y alcance comunitario para crear conciencia sobre los problemas de derechos civiles.</p>
+
+<p>Representamos a clientes en diversos contextos, incluyendo discriminación laboral, derechos de vivienda y casos de libertad de expresión. Al combinar experiencia legal con una pasión por la justicia, buscamos empoderar a nuestros clientes y promover cambios sistémicos.</p>
+
+<p>Ya sea buscando una compensación por daños individuales o abogando por reformas más amplias en los derechos civiles, nuestro compromiso es garantizar que se haga justicia y que todas las voces sean escuchadas.</p>`,
+  "modal-title-civil-disputes": "Disputas Civiles",
+  "modal-description-civil-disputes": `<p>Las disputas civiles pueden surgir en muchos aspectos de la vida, y a menudo implican desacuerdos entre personas, empresas u organizaciones. Entendemos que estos conflictos pueden afectar su vida y su sustento. Nuestro equipo experimentado está aquí para ayudarle a navegar las complejidades del derecho civil, proteger sus intereses y trabajar hacia una resolución justa.</p>
+
+<p>Las disputas civiles son conflictos legales que no implican cargos penales. En cambio, se centran en resolver desacuerdos sobre derechos, responsabilidades y obligaciones.</p> 
+<h3>Tipos comunes de disputas civiles incluyen:</h3>
+<ul>
+  <li>- Disputas contractuales: Incumplimiento de contrato, desacuerdos sobre términos o problemas de incumplimiento</li>
+  <li>- Disputas de propiedad: Problemas de límites, conflictos entre arrendadores e inquilinos o disputas sobre la propiedad</li>
+  <li>- Reclamaciones por lesiones personales: Solicitar compensación por lesiones causadas por negligencia</li>
+</ul>
+
+<p>Resolver disputas civiles requiere una combinación de experiencia legal, pensamiento estratégico y una defensa firme. Estamos comprometidos a obtener resultados mientras priorizamos sus objetivos. Entendemos que cada caso es único y adaptamos nuestro enfoque para satisfacer sus necesidades.</p>
+`,
+  "modal-title-guardianship": "Tutela",
+  "modal-description-guardianship": `<p>Nuestra práctica de Ley de Tutela ofrece servicios legales integrales para personas que buscan establecer la tutela de menores o adultos que no pueden cuidarse por sí mismos. Entendemos que manejar asuntos de tutela puede ser emocionalmente complejo y legalmente desafiante, y estamos aquí para guiarle en cada paso del camino.</p>
+
+<p>Ayudamos a nuestros clientes a comprender los requisitos legales para la tutela, incluyendo la presentación de peticiones necesarias, la recopilación de pruebas y la asistencia a audiencias judiciales. Nuestro objetivo es garantizar que se prioricen los mejores intereses de la persona que necesita tutela, ya sea un niño que necesita un entorno seguro y estable o un adulto que requiere asistencia debido a una incapacidad.</p>
+
+<p>Además de establecer la tutela, también proporcionamos representación en asuntos relacionados con la modificación, terminación y disputas entre miembros de la familia. Enfatizamos la comunicación clara y el apoyo compasivo durante todo el proceso, reconociendo la naturaleza sensible de estos casos.</p>
+
+<p>Con un compromiso de proteger los derechos y el bienestar de quienes representamos, nuestra práctica de Ley de Tutela se esfuerza por ofrecer soluciones efectivas que fomenten la seguridad, la estabilidad y la tranquilidad.</p>
+`,
+  "modal-title-divorce-custody": "Divorcio y Custodia",
+  "modal-description-divorce-custody": `<p>Nuestra práctica de Derecho de Divorcio está dedicada a guiar a individuos y familias a través de las complejidades del divorcio con compasión y experiencia. Entendemos que este es un momento difícil, y nuestro objetivo es brindar el apoyo y la representación legal necesarios para lograr una resolución justa y equitativa.</p>
+
+<p>Manejamos todos los aspectos del proceso de divorcio, incluyendo la división de bienes, la pensión alimenticia, la custodia de los hijos y el apoyo económico infantil. Nuestro enfoque se basa en comprender sus circunstancias y objetivos únicos, lo que nos permite desarrollar estrategias personalizadas que prioricen sus intereses y los de sus hijos.</p>
+
+<p>Enfatizamos la negociación y la mediación siempre que sea posible, con el objetivo de alcanzar soluciones amistosas que minimicen el conflicto y el estrés emocional. Sin embargo, también estamos preparados para defender vigorosamente sus derechos en la corte cuando sea necesario.</p>
+
+<p>Con un compromiso con la comunicación clara y el servicio personalizado, estamos aquí para ayudarle a navegar el proceso legal con confianza y alcanzar el mejor resultado posible para su futuro. Ya sea que esté buscando un divorcio colaborativo o necesite un defensor firme en litigio, nuestra práctica de Derecho de Divorcio está dedicada a apoyarle en cada paso del camino.</p>
+`,
+  // Repeat for other practice keys like "civil-rights", etc.
+
   //===========================End of practice page translations===========================
   // Attorneys page
   "attorneys-title": "Nuestros Abogados",

@@ -19,7 +19,9 @@
         <h2><a href="./index.html">Markowski Ruvalcava Law Firm, LLC</a></h2>
         <nav>
           <a href="./practice.html" data-key="practice">Practice Areas</a>
-          <a href="./attorneys.html" data-key="attorneys">Attorneys</a>
+          <a class="active" href="./attorneys.html" data-key="attorneys"
+            >Attorneys</a
+          >
           <a href="./contact.html" data-key="contact">Contact Us</a>
         </nav>
       </header>
@@ -71,7 +73,7 @@
               <!-- <button onclick="document.location='#'">Read Bio</button> -->
               <div class="attorney-card-info">
                 <h2>Carlos Ruvalcaba</h2>
-                <h3 data-key="attorneys-titles">Partner / Attorney</h3>
+                <h3 data-key="attorney-titles">Partner / Attorney</h3>
                 <p data-key="attorneys-ruvalcaba-bio">
                   Carlos Ruvalcaba is a seasoned attorney who truly cares about
                   his clients. As a proud American and U.S. Air Force veteran,
@@ -114,7 +116,7 @@
           </div>
           <div class="content-group">
             <i class="fa-regular fa-handshake"></i>
-            <h3>Se Habla Español</h3>
+            <h3 data-key="se-habla">Se Habla Español</h3>
           </div>
           <div class="content-group">
             <i class="fa-brands fa-instagram"></i>
@@ -124,10 +126,14 @@
         <div class="footer-content links">
           <h3 data-key="links-title">Quick Links</h3>
           <ul>
-            <a href="./index.html" data-key="home">Home</a>
-            <a href="./practice.html" data-key="practice">Practice Areas</a>
-            <a href="./attorneys.html" data-key="attorneys">Attorneys</a>
-            <a href="./contact.html" data-key="contact">Contact Us</a>
+            <li><a href="./index.html" data-key="home">Home</a></li>
+            <li>
+              <a href="./practice.html" data-key="practice">Practice Areas</a>
+            </li>
+            <li>
+              <a href="./attorneys.html" data-key="attorneys">Attorneys</a>
+            </li>
+            <li><a href="./contact.html" data-key="contact">Contact Us</a></li>
           </ul>
         </div>
         <div class="footer-content hours">
@@ -136,15 +142,14 @@
             <h3 data-key="hours-title">Working Hours</h3>
           </div>
           <h3 data-key="hours-mon-thurs">
-            Monday-Thursday: <span>8:30AM - 5:00PM</span>
+            Monday-Thursday:
+            <span data-key="mon-thurs-hours">8:30AM - 5:00PM</span>
           </h3>
           <h3 data-key="hours-fri">Friday: <span>9:00AM - 2:00PM</span></h3>
           <h3 data-key="hours-sat">
-            Saturday: <span data-key="hours-appt">By Appointment Only</span>
+            Saturday: <span>By Appointment Only</span>
           </h3>
-          <h3 data-key="hours-sun">
-            Sunday: <span data-key="hours-closed">Closed</span>
-          </h3>
+          <h3 data-key="hours-sun">Sunday: <span>Closed</span></h3>
         </div>
         <div class="copyright">
           <div class="rights">
@@ -154,7 +159,7 @@
             </h3>
           </div>
           <h3 data-key="copyright-design">
-            Design by: <span>Omar Insurriaga</span>
+            Design by: <span data-key="designer-name">Omar Insurriaga</span>
           </h3>
         </div>
       </footer>
