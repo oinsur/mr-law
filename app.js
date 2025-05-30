@@ -134,8 +134,9 @@ const practices = {
         <p>With a commitment to clear communication and personalized service, we are here to help you navigate the legal process with confidence and achieve the best possible outcome for your future. Whether you are seeking a collaborative divorce or need a strong advocate in litigation, our Divorce Law practice is dedicated to supporting you every step of the way.</p>`,
   },
 };
+// ===== Modal functionality =====
 
-// Modal functionality
+// Get references to modal elements
 const modal = document.getElementById("practice-modal");
 const modalImage = document.getElementById("modal-image");
 const modalTitle = document.getElementById("modal-title");
@@ -144,44 +145,44 @@ const closeModal = document.getElementById("close-modal");
 const prevBtn = document.getElementById("prev");
 const nextBtn = document.getElementById("next");
 
+// Track which practice item is currently shown
 let currentPracticeIndex = 0;
 const practiceKeys = Object.keys(practices);
 
-// function updateModal(practiceKey) {
-//   window.scrollTo({ top: 0, behavior: "auto" });
-//   const practice = practices[practiceKey];
-//   modalImage.src = practice.image;
-//   modalTitle.textContent = practice.title;
-//   modalDescription.innerHTML = practice.description;
-//   modal.style.display = "flex";
-//   currentPracticeIndex = practiceKeys.indexOf(practiceKey);
-// }
+// Function to update modal content based on selected practice
 function updateModal(practiceKey) {
+  // Scroll to top when modal is opened
   window.scrollTo({ top: 0, behavior: "auto" });
+
   const practice = practices[practiceKey];
 
+  // Update image
   modalImage.src = practice.image;
 
-  // Set title and assign data-key dynamically
+  // Set modal title text and its translation keys
   modalTitle.setAttribute("data-key", `modal-title-${practiceKey}`);
-  modalTitle.setAttribute("data-original", practice.title); // store English original
+  modalTitle.setAttribute("data-original", practice.title);
   modalTitle.textContent = practice.title;
 
-  // Set description and assign data-key dynamically
+  // Set modal description HTML and its translation keys
   modalDescription.setAttribute("data-key", `modal-description-${practiceKey}`);
-  modalDescription.setAttribute("data-original", practice.description); // store English original
+  modalDescription.setAttribute("data-original", practice.description);
   modalDescription.innerHTML = practice.description;
 
-  // Apply translation after modal is updated
+  // Apply translation to updated modal content
   applyTranslations(currentLanguage);
 
+  // Show the modal
   modal.style.display = "flex";
+
+  // Update index so previous/next buttons know where we are
   currentPracticeIndex = practiceKeys.indexOf(practiceKey);
 }
 
+// Add click event to all "view details" buttons
 document.querySelectorAll(".view-details").forEach((button) => {
   button.addEventListener("click", () => {
-    const practiceKey = button.getAttribute("data-practice"); // Get the correct key
+    const practiceKey = button.getAttribute("data-practice");
     if (practiceKey in practices) {
       updateModal(practiceKey);
       modal.style.visibility = "visible";
@@ -190,22 +191,25 @@ document.querySelectorAll(".view-details").forEach((button) => {
   });
 });
 
+// Close the modal when close button is clicked
 closeModal.addEventListener("click", () => {
   modal.style.display = "none";
 });
 
+// Navigate to the previous practice card in modal
 prevBtn.addEventListener("click", () => {
   currentPracticeIndex =
     (currentPracticeIndex - 1 + practiceKeys.length) % practiceKeys.length;
   updateModal(practiceKeys[currentPracticeIndex]);
 });
 
+// Navigate to the next practice card in modal
 nextBtn.addEventListener("click", () => {
   currentPracticeIndex = (currentPracticeIndex + 1) % practiceKeys.length;
   updateModal(practiceKeys[currentPracticeIndex]);
 });
 
-// Close modal when clicking outside the modal content
+// Close the modal if the user clicks outside the content
 window.addEventListener("click", (event) => {
   if (event.target === modal) {
     modal.style.display = "none";
