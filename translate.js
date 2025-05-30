@@ -13,7 +13,9 @@ function applyTranslations(language) {
 
     // Handle placeholder if the element supports it
     if (el.placeholder !== undefined) {
-      const placeholderKey = "placeholder-" + key;
+      const placeholderKey = key.startsWith("placeholder-")
+        ? key
+        : "placeholder-" + key;
       const originalPlaceholder =
         el.getAttribute("data-placeholder-original") || el.placeholder;
 
