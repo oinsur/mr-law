@@ -655,8 +655,27 @@ footer {
   border-bottom: 2px solid;
 }
 
-h3 span {
+/* h3 span {
   font-weight: 800;
+} */
+.design {
+  display: flex;
+  width: 20%;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.design a {
+  width: 50%;
+  color: #253172;
+  text-align: right;
+  font-weight: 800;
+}
+
+h3 a {
+  color: #253172;
+  font-weight: 800;
+  font-size: clamp(0.5rem, 2vw, 0.9rem);
 }
 
 .consultation {
@@ -1013,6 +1032,11 @@ form button:hover {
   .rights {
     margin: 0;
   }
+  .design {
+    min-width: 40%;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 @media screen and (max-width: 426px) {
@@ -1071,6 +1095,9 @@ form button:hover {
   }
   .contact-directions img {
     width: 80%;
+  }
+  .design {
+    min-width: 60%;
   }
   form h3 {
     font-size: 1rem;

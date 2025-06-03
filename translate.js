@@ -302,5 +302,5 @@ const translations = {
   // copyright
   "copyright-rights":
     "2025 Markowski Ruvalcaba Law Firm, LLC. Todos los derechos reservados.",
-  "copyright-design": "Diseño por: <span>Omar Insurriaga</span>",
+  "copyright-design": "Diseño por:",
 };
