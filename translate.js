@@ -260,7 +260,6 @@ const translations = {
 
 <p>Con un compromiso con la comunicación clara y el servicio personalizado, estamos aquí para ayudarle a navegar el proceso legal con confianza y alcanzar el mejor resultado posible para su futuro. Ya sea que esté buscando un divorcio colaborativo o necesite un defensor firme en litigio, nuestra práctica de Derecho de Divorcio está dedicada a apoyarle en cada paso del camino.</p>
 `,
-  // Repeat for other practice keys like "civil-rights", etc.
 
   //===========================End of practice page translations===========================
   // Attorneys page
@@ -280,9 +279,15 @@ const translations = {
   "label-phone": "Teléfono",
   "label-email": "Correo Electrónico",
   "label-message": "Su mensaje",
-  "send-button": "Enviar Consulta",
+  "send-button": "Enviar Mensaje",
   "legal-support-ending":
     "Esperamos poder asistirle con sus necesidades legales.",
+  // Confirmation page
+  "confirmation-thanks": "Gracias!",
+  "confirmation-message":
+    "Su mensaje ha sido enviado con éxito. Nos pondremos en contacto con usted lo antes posible.",
+  "confirmation-home": "Volver al inicio",
+
   // Placeholder translations
   "placeholder-name": "Escriba su nombre",
   "placeholder-phone": "Escriba su número de teléfono",
